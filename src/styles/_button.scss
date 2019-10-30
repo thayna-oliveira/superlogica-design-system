@@ -1,0 +1,40 @@
+// stylelint-disable selector-no-qualifying-type
+
+//
+// Base styles
+//
+
+@import 'tokens.scss';
+
+.btn { 
+  color: #ffffff;
+
+  &--neutral {
+    background-color: var(--neutral-800);
+  }
+
+  &--primary {
+    background-color: $blue;
+  }
+
+  &--success {
+    background-color: var(--green);
+  }
+
+  &--info {
+    background-color: var(--celeste);
+  }
+
+  &--danger {
+    background-color: var(--red);
+  }
+
+  &--warning {
+    background-color: var(--yellow);
+  }
+
+  &--white {
+    background-color: var(--neutral-50);
+  }
+
+}

@@ -1,15 +1,16 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-import { ButtonTypes, ButtonSizes, ButtonThemes } from "./buttonTypes";
-import { IconTypes } from "./IconTypes";
-import Icon from "./Icons";
-
 import "./button.css";
+import {ButtonTypes, ButtonSizes, ButtonThemes} from "./ButtonTypes"; 
+
 
 export default class Button extends Component {
+
   getButtonClasses() {
-    const { icon, size, theme, type } = this.props;
+
+    const {size, theme, type } = this.props;
+
     const buttonClasses = [
       "button",
       `button--${size}`,
@@ -17,32 +18,32 @@ export default class Button extends Component {
       `button--${type}`
     ];
 
-    icon && icon !== IconTypes.NONE && buttonClasses.push("button--icon");
-
     return buttonClasses.join(" ");
   }
+
   render() {
-    const { disabled, onClickHandler, label, icon } = this.props;
+    const { disabled, onClickHandler, label} = this.props;
+
     return (
       <button
         className={this.getButtonClasses()}
         onClick={event => onClickHandler(event.target)}
         disabled={disabled}
       >
-        {icon && <Icon icon={icon} />}
         {label}
       </button>
     );
+
   }
 }
+
 Button.propTypes = {
   type: PropTypes.oneOf(Object.values(ButtonTypes)),
   disabled: PropTypes.bool,
   onClickHandler: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired,
   size: PropTypes.oneOf(Object.values(ButtonSizes)),
-  theme: PropTypes.oneOf(Object.values(ButtonThemes)),
-  icon: PropTypes.oneOf(Object.values(IconTypes))
+  theme: PropTypes.oneOf(Object.values(ButtonThemes))
 };
 
 Button.defaultProps = {
@@ -51,6 +52,5 @@ Button.defaultProps = {
   label: "",
   disabled: false,
   size: ButtonSizes.MEDIUM,
-  theme: ButtonThemes.LIGHT,
-  icon: IconTypes.NONE
+  theme: ButtonThemes.LIGHT
 };

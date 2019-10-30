@@ -1,68 +1,75 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React Button
+This repository is the code demo from my "Building Design Systems With React" talk I will give at [ReactJS Girls London](https://reactjsgirls.com/#speakers). I will link the deck once the talk has been given.
 
-## Available Scripts
+You can view the live site [here](https://react-button.netlify.com).
 
-In the project directory, you can run:
+## Design
 
-### `npm start`
+### Light Theme
+![Buttons Light](https://user-images.githubusercontent.com/7671983/56490131-6d43ed00-64e4-11e9-8073-569517a1c5e9.jpg)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Dark Theme
+![Buttons Dark](https://user-images.githubusercontent.com/7671983/56490130-6d43ed00-64e4-11e9-906e-72ba20cfbf86.jpg)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `npm test`
+## Properties
+| Property        | Description                        | Type          | Required   |
+| :------------   | :----------------------------------| :------------ | :--------- |
+| `disabled`      | Sets the button to a disabled state| `boolean`     | false      |
+| `icon    `      | Adds an icon to the button         | `IconType`    | false      |
+| `label    `     | The button text                    | `string`      | true       |
+| `onClickHandler`| The action to be dispatched onClick| `function`    | true       |
+| `size`          | The size of the button             | `ButtonSizes` | false      |
+| `theme`         | The theme for the button           | `ButtonThemes`| false      |
+| `type`          | The type of button                 | `ButtonTypes` | false      |
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Types
+| Type            | Values                           | Default      |
+| :------------   | :--------------------------------| :----------- |
+| `ButtonSizes`   | `SMALL` `MEDIUM` `LARGE`         | `MEDIUM`     |
+| `ButtonThemes`  | `LIGHT` `DARK`                   | `LIGHT `     |
+| `ButtonTypes`   | `PRIMARY` `SECONDARY` `TERTIARY` | `PRIMARY `   |
+| `IconTypes`     | `SAVE` `NONE`                    | `NONE `      |
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Examples
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### Light Theme
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<img width="191" alt="image" src="https://user-images.githubusercontent.com/7671983/56490687-4dadc400-64e6-11e9-90a6-4378df36af9d.png">
 
-### `npm run eject`
+```jsx
+<Button
+  size={ButtonSizes.MEDIUM}
+  label="Button"
+  onClickHandler={() => alert("you clicked!")}
+  type={ButtonTypes.PRIMARY}
+  icon={IconTypes.SAVE}
+/>
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Dark Theme
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<img width="195" alt="image" src="https://user-images.githubusercontent.com/7671983/56490717-6e761980-64e6-11e9-907e-8bc6277d8e64.png">
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```jsx
+<Button
+  size={ButtonSizes.MEDIUM}
+  label="Button"
+  theme={ButtonThemes.DARK}
+  onClickHandler={() => alert("you clicked!")}
+  type={ButtonTypes.SECONDARY}
+/>
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<img width="136" alt="image" src="https://user-images.githubusercontent.com/7671983/56490782-a67d5c80-64e6-11e9-9a93-95607b1be421.png">
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+```jsx
+<Button
+  size={ButtonSizes.SMALL}
+  label="Button"
+  theme={ButtonThemes.DARK}
+  onClickHandler={() => alert("you clicked!")}
+  type={ButtonTypes.PRIMARY}
+/>
+```

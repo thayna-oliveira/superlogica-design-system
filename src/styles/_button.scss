@@ -10,7 +10,7 @@
   color: #ffffff;
 
   &--neutral {
-    background-color: var(--neutral-800);
+    background-color: $neutral-800;
   }
 
   &--primary {
@@ -18,23 +18,23 @@
   }
 
   &--success {
-    background-color: var(--green);
+    background-color: $green;
   }
 
   &--info {
-    background-color: var(--celeste);
+    background-color: $celeste;
   }
 
   &--danger {
-    background-color: var(--red);
+    background-color: $red;
   }
 
   &--warning {
-    background-color: var(--yellow);
+    background-color: $yellow;
   }
 
   &--white {
-    background-color: var(--neutral-50);
+    background-color: $neutral-0;
   }
 
 }

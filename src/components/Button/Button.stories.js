@@ -17,7 +17,7 @@ storiesOf("Button", module)
       />
 
       <Button
-        size={size.medium}
+        size="medium"
         onClick={action("clicked")}
         label="Medium"
       />

@@ -117,11 +117,39 @@ storiesOf("Button", module)
   ))
 
   .add("Shadow", () => (
-    <Button
-      color={color.primary}
-      onClick={action("clicked")}
-      label="Ghost Button"
-    />
+
+    <div>
+      <Button
+        shadow={shadow.none}
+        onClick={action("clicked")}
+        label="Shadow None"
+      />
+
+      <Button
+        shadow={shadow.dp1}
+        onClick={action("clicked")}
+        label="Shadow 1dp"
+      />
+
+      <Button
+        shadow={shadow.dp2}
+        onClick={action("clicked")}
+        label="Shadow 2dp"
+      />
+
+      <Button
+        shadow={shadow.dp3}
+        onClick={action("clicked")}
+        label="Shadow 3dp"
+      />
+
+      <Button
+        shadow={shadow.dp4}
+        onClick={action("clicked")}
+        label="Shadow 4dp"
+      />
+    </div>
+
   ))
 
   ;

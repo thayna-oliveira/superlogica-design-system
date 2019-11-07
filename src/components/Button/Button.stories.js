@@ -3,153 +3,21 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 
-import Button from "./Button";
-import { size, style, color, icon, iconPosition, shadow } from "./ButtonTypes";
+import Button from "./Button"; 
 
 storiesOf("Button", module)
 
-  .add("Size", () => (
-    <div>
-      <Button
-        size={size.small}
-        onClick={action("clicked")}
-        label="Small"
-      />
-
-      <Button
-        size="medium"
-        onClick={action("clicked")}
-        label="Medium"
-      />
-
-      <Button
-        size={size.large}
-        onClick={action("clicked")}
-        label="Large"
-      />
-
-      <Button
-        size={size.extraLarge}
-        onClick={action("clicked")}
-        label="Extra Large"
-      />
-    </div>
-  ))
-
   .add("Color", () => (
     <div>
-
-      <Button
-        color={color.neutral}
-        onClick={action("clicked")}
-        label="Neutral"
-      />
-
-      <Button
-        color={color.primary}
-        onClick={action("clicked")}
-        label="Primary"
-      />
-
-      <Button
-        color={color.success}
-        onClick={action("clicked")}
-        label="Success"
-      />
-
-      <Button
-        color={color.info}
-        onClick={action("clicked")}
-        label="Info"
-      />
-
-      <Button
-        color={color.danger}
-        onClick={action("clicked")}
-        label="Danger"
-      />
-
-      <Button
-        color={color.warning}
-        onClick={action("clicked")}
-        label="Warning"
-      />
-
-      <Button
-        color={color.white}
-        onClick={action("clicked")}
-        label="White"
-      />
-
+      <Button>Danger</Button>
+      <Button primary>Danger</Button>
+      <Button success>Danger</Button>
+      <Button info>Danger</Button>
+      <Button danger>Danger</Button>
+      <Button warning>Danger</Button>
+      <Button white>Danger</Button>
+      <Button colorLibrary>Danger</Button>
     </div>
-  ))
-
-  .add("Style", () => (
-    <div>
-      <Button
-        style={style.solid}
-        onClick={action("clicked")}
-        label="Solid Button"
-      />
-
-      <Button
-        style={style.outline}
-        onClick={action("clicked")}
-        label="Outline Button"
-      />
-
-      <Button
-        style={style.ghost}
-        onClick={action("clicked")}
-        label="Ghost Button"
-      />
-
-    </div>
-
-  ))
-
-  .add("Icon", () => (
-    <Button
-      color={color.primary}
-      onClick={action("clicked")}
-      label="Ghost Button"
-    />
-  ))
-
-  .add("Shadow", () => (
-
-    <div>
-      <Button
-        shadow={shadow.none}
-        onClick={action("clicked")}
-        label="Shadow None"
-      />
-
-      <Button
-        shadow={shadow.dp1}
-        onClick={action("clicked")}
-        label="Shadow 1dp"
-      />
-
-      <Button
-        shadow={shadow.dp2}
-        onClick={action("clicked")}
-        label="Shadow 2dp"
-      />
-
-      <Button
-        shadow={shadow.dp3}
-        onClick={action("clicked")}
-        label="Shadow 3dp"
-      />
-
-      <Button
-        shadow={shadow.dp4}
-        onClick={action("clicked")}
-        label="Shadow 4dp"
-      />
-    </div>
-
   ))
 
   ;
